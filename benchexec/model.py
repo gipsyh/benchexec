@@ -8,6 +8,7 @@
 import collections.abc
 import logging
 import os
+import random
 import re
 import sys
 import yaml
@@ -902,6 +903,8 @@ class RunSet(object):
 
         # sort alphabetical,
         fileList.sort()
+        random.seed(0)
+        random.shuffle(fileList)
 
         if not fileList:
             logging.warning("No files found matching %r.", pattern)

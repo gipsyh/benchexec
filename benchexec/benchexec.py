@@ -491,6 +491,8 @@ def main(benchexec=None, argv=None):
     if sys.version_info < (3,):
         sys.exit("benchexec needs Python 3 to run.")
 
+    sys.path.insert(0, os.getcwd())
+
     try:
         if not benchexec:
             benchexec = BenchExec()

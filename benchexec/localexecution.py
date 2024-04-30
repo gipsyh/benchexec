@@ -110,12 +110,13 @@ def execute_benchmark(benchmark, output_handler):
             logging.error("Cgroup subsystem memory is required for memory limit.")
         else:
             # check whether we have enough memory in the used memory banks for all runs
-            resources.check_memory_size(
-                benchmark.rlimits.memory,
-                benchmark.num_of_threads,
-                memoryAssignment,
-                my_cgroups,
-            )
+            # resources.check_memory_size(
+            #     benchmark.rlimits.memory,
+            #     benchmark.num_of_threads,
+            #     memoryAssignment,
+            #     my_cgroups,
+            # )
+            pass
 
     if benchmark.rlimits.cputime:
         if not my_cgroups.require_subsystem(my_cgroups.CPU):

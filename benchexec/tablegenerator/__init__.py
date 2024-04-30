@@ -1589,6 +1589,8 @@ def main(args=None):
     if sys.version_info < (3,):
         sys.exit("table-generator needs Python 3 to run.")
 
+    sys.path.insert(0, os.getcwd())
+
     arg_parser = create_argument_parser()
     options = arg_parser.parse_args((args or sys.argv)[1:])
 
